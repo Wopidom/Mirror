@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public Character character;
+
     [SerializeField]
     private float walkSpeed = 3.5f;
 
-    private Animator _animator;
-    private Rigidbody2D _rb2D;
     private Vector2 _inputPosition;
+    private Vector2 _prevPos;
 
-    private void Awake()
+    private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _rb2D = GetComponent<Rigidbody2D>();
+        _prevPos = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         Input();
     }
@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         Move(_inputPosition);
+        character.velocity = ((Vector2)transform.position - _prevPos) / Time.deltaTime;
+        _prevPos = transform.position;
     }
 
     private void Input()
@@ -32,6 +34,6 @@ public class PlayerControl : MonoBehaviour
 
     private void Move(Vector2 inputPosition)
     {
-        _rb2D.MovePosition(_rb2D.position + inputPosition * walkSpeed * Time.fixedDeltaTime);
+        character.rb2D.MovePosition(character.rb2D.position + inputPosition * walkSpeed * Time.fixedDeltaTime);
     }
 }

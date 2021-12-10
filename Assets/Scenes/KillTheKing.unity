@@ -46000,6 +46000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928660971}
+  - component: {fileID: 928660972}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -46022,6 +46023,19 @@ Transform:
   m_Father: {fileID: 1254710572}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928660972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928660970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3e7cc2909b25e4babf8f18b796b0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cmVirtualCamera: {fileID: 1827321756}
 --- !u!1 &1132031460
 GameObject:
   m_ObjectHideFlags: 3
@@ -46656,6 +46670,7 @@ GameObject:
   - component: {fileID: 1592739062}
   - component: {fileID: 1592739061}
   - component: {fileID: 1592739063}
+  - component: {fileID: 1592739064}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -46799,7 +46814,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a1e1b1801a5864e89c6becf85fe3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1592739064}
   walkSpeed: 4
+--- !u!114 &1592739064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592739057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4f9147e82bcab4b85ae2c6c1ed861d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2D: {fileID: 1592739062}
+  animator: {fileID: 1592739058}
+  spriteRenderer: {fileID: 1592739059}
+  velocity: {x: 0, y: 0}
 --- !u!1 &1827321755
 GameObject:
   m_ObjectHideFlags: 0
