@@ -27,6 +27,11 @@ public class Work : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        button.gameObject.SetActive(false);
+    }
+
 
     private void WorkTask(Character character)
     {
@@ -44,8 +49,5 @@ public class Work : MonoBehaviour
         DOVirtual.DelayedCall(taskDelay * idx, () => button.sprite = buttons[taskId]);
         //DOVirtual.DelayedCall(taskDelay * idx, () => character.transform.DOMove(pieces[taskId].transform.position, taskDelay / 2));
         DOVirtual.DelayedCall(taskDelay * idx, () => button.transform.DOMove(new Vector3(0, 1, 0), taskDelay).SetRelative(true).SetEase(Ease.InSine).From(pieces[taskId].transform.position));
-
-        if(idx == workTasks.Length - 1)
-            DOVirtual.DelayedCall(taskDelay, () => button.gameObject.SetActive(false));
     }
 }
