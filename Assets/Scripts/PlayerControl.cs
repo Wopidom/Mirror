@@ -8,12 +8,6 @@ public class PlayerControl : MonoBehaviour
     private float walkSpeed = 3.5f;
 
     private Vector2 _inputPosition;
-    private Vector2 _prevPos;
-
-    private void Start()
-    {
-        _prevPos = transform.position;
-    }
 
     private void Update()
     {
@@ -23,8 +17,6 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         Move(_inputPosition);
-        character.velocity = ((Vector2)transform.position - _prevPos) / Time.deltaTime;
-        _prevPos = transform.position;
     }
 
     private void Input()
